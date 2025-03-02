@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloaner - 批量文件重命名工具</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="logo.svg" alt="Sloaner Logo" class="logo-img">
+                <span class="logo-text">Sloaner</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="active">文件重命名</a>
+            </nav>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="hero-section">
+            <h1>批量文件重命名工具</h1>
+            <p class="subtitle">简单高效的文件管理解决方案</p>
+        </div>
+        
+        <div class="card upload-section">
+            <div id="drop-zone" class="drop-zone">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>拖拽文件到此处或</p>
+                <input type="file" id="file-input" multiple>
+                <label for="file-input" class="file-input-label">选择文件</label>
+                <p class="support-text">支持多个文件同时上传</p>
+            </div>
+        </div>
+
+        <div class="card options-section">
+            <h2><i class="fas fa-cog"></i> 重命名选项</h2>
+            <div class="rename-options-grid">
+                <div class="option-card" id="prefix-options">
+                    <h3><i class="fas fa-font"></i> 添加前缀</h3>
+                    <div class="input-group">
+                        <input type="text" id="prefix-text" placeholder="输入要添加的前缀">
+                    </div>
+                </div>
+
+                <div class="option-card" id="replace-options">
+                    <h3><i class="fas fa-exchange-alt"></i> 替换字符</h3>
+                    <div class="input-group">
+                        <input type="text" id="old-text" placeholder="要替换的文本">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="new-text" placeholder="替换为新文本">
+                    </div>
+                </div>
+
+                <div class="option-card" id="number-options">
+                    <h3><i class="fas fa-sort-numeric-down"></i> 按编号排序</h3>
+                    <div class="input-group checkbox-group">
+                        <input type="checkbox" id="enable-numbering" checked>
+                        <label for="enable-numbering">启用编号排序</label>
+                    </div>
+                    <div class="input-group">
+                        <label for="start-number">起始编号：</label>
+                        <input type="number" id="start-number" value="1" min="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="digit-count">位数：</label>
+                        <input type="number" id="digit-count" value="3" min="1" max="10">
+                    </div>
+                </div>
+
+                <div class="option-card" id="extension-options">
+                    <h3><i class="fas fa-file-alt"></i> 修改后缀</h3>
+                    <div class="input-group">
+                        <input type="text" id="new-extension" placeholder="输入新的后缀名">
+                    </div>
+                </div>
+            </div>
+            <button id="apply-btn" class="apply-btn">
+                <i class="fas fa-magic"></i>
+                应用更改
+            </button>
+        </div>
+
+        <div class="card preview-section">
+            <h2><i class="fas fa-eye"></i> 预览</h2>
+            <div id="preview-list" class="preview-list">
+                <!-- 预览内容将通过 JavaScript 动态添加 -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2024 Sloaner. All rights reserved.</p>
+                <p>Created by xinxi2024</p>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
